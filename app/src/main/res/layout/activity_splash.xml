@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg_gradient"
+    tools:context=".SplashActivity">
+
+    <!-- Decorative Background Elements -->
+    <View
+        android:id="@+id/circle1"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/splash_circle_accent"
+        android:alpha="0.15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="-100dp" />
+
+    <View
+        android:id="@+id/circle2"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/splash_circle_secondary"
+        android:alpha="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="-80dp"
+        android:layout_marginBottom="-80dp" />
+
+    <!-- Main Content Container -->
+    <LinearLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Logo Container with Background -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/logoCard"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="32dp"
+            android:elevation="16dp"
+            app:cardCornerRadius="80dp"
+            android:layout_marginTop="10dp"
+            app:cardElevation="16dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/splash_logo_bg">
+
+                <!-- App Logo/Icon -->
+                <ImageView
+                    android:id="@+id/ivAppLogo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/shritajlogo"
+                    android:contentDescription="App Logo"
+                    android:scaleType="centerInside" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- App Name with Modern Typography -->
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shree Taj Realtor"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_burgundy"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.05"
+            android:shadowColor="@color/glass_white_20"
+            android:shadowDx="0"
+            android:shadowDy="4"
+            android:shadowRadius="8" />
+
+        <!-- App Tagline with Modern Style -->
+        <TextView
+            android:id="@+id/tvTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Tracking &amp; Reporting"
+            android:textSize="18sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="48dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.08"
+            android:textAllCaps="false" />
+
+        <!-- Modern Loading Container -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/splash_status_bg"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="20dp"
+            android:elevation="4dp">
+
+            <!-- Custom Progress Indicator -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:indeterminateTint="@color/primary_burgundy"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Status Message with Modern Typography -->
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Initializing..."
+                android:textSize="14sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="sans-serif-medium" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Modern Version Badge -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version 1.0.0"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:fontFamily="sans-serif"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="8dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Branding Footer -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/splash_divider" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:letterSpacing="0.05"
+            android:text="Powered by SHTS Infotech Pvt. Ltd."
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/splash_divider" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

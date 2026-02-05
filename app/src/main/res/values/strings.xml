@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Shree Taj Realtor</string>
+    
+    <!-- Exit Dialog Strings -->
+    <string name="exit_dialog_title">Exit Application</string>
+    <string name="exit_dialog_message">Are you sure you want to exit the application?</string>
+    <string name="exit_dialog_yes">Yes</string>
+    <string name="exit_dialog_no">No</string>
+    
+    <!-- Forgot Password Strings -->
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password_title">Forgot Password</string>
+    <string name="forgot_password_subtitle">Enter your email address to receive a verification code</string>
+    <string name="email_label">Email Address</string>
+    <string name="email_hint">Enter your email address</string>
+    <string name="send_otp">Send OTP</string>
+    
+    <string name="verify_otp_title">Verify OTP</string>
+    <string name="verify_otp_subtitle">Enter the 6-digit code sent to your email</string>
+    <string name="otp_sent_default_message">Enter the OTP sent to your email</string>
+    <string name="otp_sent_message">An OTP has been sent to %1$s</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="didnt_receive_otp">Didn\'t receive code? </string>
+    <string name="resend_otp">Resend</string>
+    <string name="resend_otp_timer">Resend in %1$ds</string>
+    
+    <string name="reset_password_title">Reset Password</string>
+    <string name="reset_password_subtitle">Create a new password for your account</string>
+    <string name="new_password_label">New Password</string>
+    <string name="new_password_hint">Enter new password</string>
+    <string name="confirm_password_label">Confirm Password</string>
+    <string name="confirm_password_hint">Confirm new password</string>
+    <string name="password_requirements">Password must contain:\n• At least 8 characters\n• One uppercase letter\n• One lowercase letter\n• One digit\n• One special character</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="password_reset_success">Password reset successful! Please login with your new password.</string>
+    
+    <!-- Loading Messages -->
+    <string name="sending_otp">Sending OTP…</string>
+    <string name="verifying_otp">Verifying OTP…</string>
+    <string name="resetting_password">Resetting password…</string>
+    <string name="please_wait">Please wait…</string>
+    
+    <!-- Accessibility -->
+    <string name="back_button">Go back</string>
+</resources>

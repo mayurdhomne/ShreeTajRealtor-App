@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/monthCard"
+    android:layout_width="0dp"
+    android:layout_height="70dp"
+    android:layout_columnWeight="1"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    android:background="@color/white"
+    app:cardElevation="1dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvMonthName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JAN"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:letterSpacing="0.02" />
+
+        <View
+            android:id="@+id/statusIndicator"
+            android:layout_width="24dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/circle_background"
+            android:backgroundTint="#E5E7EB" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

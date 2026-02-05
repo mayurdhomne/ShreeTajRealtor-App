@@ -1,0 +1,212 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.STR" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary_burgundy</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/gradient_start</item>
+        <item name="colorOnSurface">@color/white</item>
+
+        <!-- Colors -->
+        <item name="colorAccent">@color/primary_burgundy</item>
+        <item name="colorControlActivated">@color/primary_burgundy</item>
+        <item name="colorControlNormal">@color/primary_burgundy</item>
+        <item name="colorSecondary">@color/primary_burgundy</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@color/gradient_end</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        
+        <!-- Edge-to-edge compatibility - ensure system bars don't overlap content -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="Theme.STR" parent="Base.Theme.STR" />
+
+    <!-- Custom styles for our app -->
+    <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/primary_burgundy</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <style name="AppTheme.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/primary_burgundy</item>
+        <item name="hintTextColor">@color/primary_burgundy</item>
+    </style>
+
+    <!-- Splash Screen Theme -->
+    <!-- Modern Splash Screen Theme with White Background -->
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <!-- NumberPicker Style -->
+    <style name="NumberPickerStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="colorControlNormal">@color/primary_burgundy</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+
+    <!-- Bottom Sheet Dialog Theme - Always Light Mode -->
+    <style name="BottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Dropdown menu styling -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="android:background">@color/white</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
+    <!-- Custom Dropdown Style -->
+    <style name="CustomDropdownMenuStyle" parent="Widget.MaterialComponents.PopupMenu">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+        <item name="android:popupElevation">8dp</item>
+    </style>
+
+    <!-- Custom RadioButton Style -->
+    <style name="CustomRadioButtonStyle" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/radio_button_selector</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:background">@drawable/radio_button_background</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textStyle">normal</item>
+        <!-- Force theme colors -->
+        <item name="colorAccent">@color/primary_burgundy</item>
+        <item name="colorControlActivated">@color/primary_burgundy</item>
+        <item name="colorControlNormal">@color/primary_burgundy</item>
+        <item name="android:colorButtonNormal">@color/primary_burgundy</item>
+        <item name="android:colorControlActivated">@color/primary_burgundy</item>
+        <item name="android:colorControlNormal">@color/primary_burgundy</item>
+    </style>
+
+    <!-- Enhanced TextInputLayout Style -->
+    <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/button_color</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextColor">@color/button_color</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+    </style>
+
+    <style name="CustomTextdropdownStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/button_color</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextColor">@color/button_color</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+    </style>
+
+    <!-- Year Picker Dialog Theme - Always Light Mode -->
+    <style name="YearPickerDialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowSoftInputMode">stateUnchanged</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+    </style>
+
+    <!-- Profile UI Styles -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="ExpandedTitleText" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="ModernExpandedTitleText" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="ProfileCardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="ProfileSectionHeader">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="ProfileInfoLabel">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="ProfileInfoValue">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Bottom Navigation Indicator Style -->
+    <style name="BottomNavIndicator" parent="">
+        <item name="android:color">@color/primary_burgundy</item>
+        <item name="android:alpha">0.1</item>
+    </style>
+</resources>

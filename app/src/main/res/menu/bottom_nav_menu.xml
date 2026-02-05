@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_nav_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_work_plan"
+        android:icon="@drawable/ic_nav_work_plan"
+        android:title="Work Plan" />
+
+    <item
+        android:id="@+id/nav_daily_report"
+        android:icon="@drawable/ic_nav_daily_report"
+        android:title="Report" />
+
+    <item
+        android:id="@+id/nav_incentive"
+        android:icon="@drawable/ic_nav_incentive"
+        android:title="Incentive" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_nav_profile"
+        android:title="Profile" />
+
+</menu>

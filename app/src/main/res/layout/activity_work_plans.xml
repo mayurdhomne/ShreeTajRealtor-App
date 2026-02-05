@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFBFC"
+    android:fitsSystemWindows="true"
+    tools:context=".WorkPlansActivity">
+
+    <!-- App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/gradient_end"
+            app:titleTextColor="@color/white"
+            app:title="Work Plans"
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@color/white"/>
+
+        <!-- Progress Indicator -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:indicatorColor="@color/gradient_end"
+            app:trackColor="@color/gradient_start" />
+
+        <!-- Tab Layout -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/text_secondary"
+            app:tabSelectedTextColor="@color/gradient_end"
+            app:tabIndicatorColor="@color/gradient_end"
+            app:tabIndicatorHeight="3dp" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/contentScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+
+                    <!-- Create Your Plan Button (Only visible in Your Plans tab) -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCreateYourPlan"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:text="Create Your Plan"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/gradient_end"
+                        app:cornerRadius="12dp"
+                        app:icon="@android:drawable/ic_input_add"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/white"
+                        android:layout_marginBottom="16dp"
+                        android:visibility="gone"
+                        style="@style/Widget.Material3.Button" />
+
+                    <!-- Work Details Table -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Table Header -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:id="@+id/tvTableTitle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Work Details"
+                                    android:textColor="@color/gradient_end"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/ivFilter"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/filter_icon_background"
+                                    android:clickable="true"
+                                    android:contentDescription="Filter work plans"
+                                    android:focusable="true"
+                                    android:padding="6dp"
+                                    android:src="@drawable/ic_filter"
+                                    app:tint="@color/gradient_end" />
+
+                            </LinearLayout>
+
+                            <!-- Week Filter Dropdown -->
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/weekFilterLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="16dp"
+                                android:layout_marginBottom="8dp"
+                                android:visibility="gone"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                                android:hint="Select Week"
+                                app:boxStrokeColor="@color/gradient_end"
+                                app:hintTextColor="@color/text_secondary"
+                                app:boxBackgroundColor="@color/white"
+                                app:endIconTint="@color/gradient_end">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/weekFilterDropdown"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="56dp"
+                                    android:inputType="none"
+                                    android:paddingHorizontal="12dp"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="14sp"
+                                    android:cursorVisible="false" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <!-- RecyclerView for Work Details -->
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerViewWorkDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:nestedScrollingEnabled="false"
+                                tools:listitem="@layout/item_work_plan" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!-- Empty State -->
+            <LinearLayout
+                android:id="@+id/emptyStateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="32dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_work_outline"
+                    android:alpha="0.6"
+                    app:tint="@color/gradient_end" />
+
+                <TextView
+                    android:id="@+id/tvEmptyStateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No Work Plans Found"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/tvEmptyStateSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create your first plan"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginHorizontal="24dp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Floating Action Button for Create Plan - positioned dynamically above BottomNav -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCreatePlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@android:drawable/ic_input_add"
+        android:visibility="gone"
+        app:tint="@color/white"
+        app:backgroundTint="@color/gradient_end" />
+
+    <!-- Bottom Navigation - Fixed for edge-to-edge and gesture navigation compatibility -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_nav_background"
+        android:elevation="@dimen/bottom_nav_elevation"
+        android:minHeight="@dimen/bottom_nav_height"
+        android:paddingBottom="0dp"
+        app:itemIconSize="@dimen/bottom_nav_icon_size"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemRippleColor="@color/primary_burgundy" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

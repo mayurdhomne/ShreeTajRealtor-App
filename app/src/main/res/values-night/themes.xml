@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.STR" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary_burgundy</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/gradient_start</item>
+        <item name="colorOnSurface">@color/white</item>
+        <!-- Override default radio button colors -->
+        <item name="colorAccent">@color/primary_burgundy</item>
+        <item name="colorControlActivated">@color/primary_burgundy</item>
+        <item name="colorControlNormal">@color/primary_burgundy</item>
+        <item name="colorSecondary">@color/primary_burgundy</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Set Background Color -->
+        <item name="android:windowBackground">@android:color/white</item> <!-- Change to desired color -->
+
+        <!-- Set Status Bar Color -->
+        <item name="android:statusBarColor">@color/gradient_end</item>
+
+        <!-- Optional: Set Navigation Bar Color -->
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="Theme.STR" parent="Base.Theme.STR" />
+
+    <!-- Custom styles for our app -->
+    <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/primary_burgundy</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <style name="AppTheme.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/primary_burgundy</item>
+        <item name="hintTextColor">@color/primary_burgundy</item>
+    </style>
+    
+    <!-- Bottom Sheet Dialog Theme - Always Light Mode (Override Dark Mode) -->
+    <style name="BottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+    
+    <style name="BottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="android:background">@color/white</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+</resources>

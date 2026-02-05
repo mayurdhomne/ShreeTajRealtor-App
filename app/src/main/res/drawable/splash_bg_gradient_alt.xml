@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Alternative modern gradient background with subtle colors -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="180"
+        android:startColor="#FFFFFF"
+        android:centerColor="#FAFBFC"
+        android:endColor="#F5F7FA"
+        android:type="linear" />
+</shape>
